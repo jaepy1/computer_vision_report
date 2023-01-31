@@ -14,3 +14,16 @@ rgb1=cv2.cvtColor(ycbcr1,cv2.COLOR_YCR_CB2BGR)
 function_psnr=cv2.PSNR(img,rgb1)
 print("PSNR implemented by function:" ,function_psnr)
 
+height, width,channel = img.shape
+total_pixel=height*width
+hist,bin=np.histogram(y.ravel(),256,[0.256])
+sum=hist.cumsum()
+
+hist_equal=np.uint8(np.ceil((255+1)/(total_pixel)*sum)-1)
+
+y2=hist_equal[y]
+ycbcr2=(np.dstack((y2,cr,cb))).astype(np.uint8)
+rgb2=cv2.cvtColor(ycbcr2,cv2.COLOR_YCR_CB2BGR)
+
+formula_psnr=cv2.PSNR(img,rgb2)
+print("PSNR implemented by formula:" ,formula_psnr)
