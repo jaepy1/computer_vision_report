@@ -7,7 +7,7 @@ img=cv2.imread(imgfile,cv2.IMREAD_COLOR)
 ycbcr=cv2.cvtColor(img,cv2.COLOR_BGR2YCR_CB)
 y,cr,cb=cv2.split(ycbcr)
 
-y1=cv2.equalizeHIst(y)
+y1=cv2.equalizeHist(y)
 ycbcr1=(np.dstack((y1,cr,cb))).astype(np.uint8)
 rgb1=cv2.cvtColor(ycbcr1,cv2.COLOR_YCR_CB2BGR)
 
