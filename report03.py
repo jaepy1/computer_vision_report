@@ -10,7 +10,7 @@ def psnr(original, contrast):
     max=255
     return 20 * math.log10(max / math.sqrt(mse))#psnr
 
-imgfile='image1.jpg'
+imgfile='window.jpg'
 
 img=cv2.imread(imgfile, cv2.IMREAD_COLOR) # RGB원본
 cv2.imshow('img', img) 
