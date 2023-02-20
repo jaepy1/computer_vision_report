@@ -3,7 +3,6 @@ import numpy as np
 import cv2
 
 imgfile='window.jpg'
-print (heelo)
 
 img=cv2.imread(imgfile, cv2.IMREAD_COLOR)
 cv2.imshow('img', img) 
